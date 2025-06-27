@@ -1,0 +1,530 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f3f4f6;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container principal */
+.main-container {
+  display: flex;
+  width: 900px;
+  height: 560px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Painel azul (esquerda) */
+.left-panel {
+  flex: 1;
+  background-color: #2563eb;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.left-panel h1 {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* Painel branco (direita) */
+.right-panel {
+  flex: 1.2;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 350px;
+}
+
+h2 {
+  color: #1f2937;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Botão */
+button {
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+/* Link */
+.link {
+  font-size: 13px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.link a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-container {
+  height: 100vh;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-box {
+  background-color: white;
+  padding: 40px 32px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 420px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #2563eb;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 14px;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+button {
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+.layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px; /* Opcional: define uma largura máxima */
+  background-color: white;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #f8fafc; /* Um cinza bem claro */
+  padding: 20px;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.foto-perfil {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+#nomeUsuario {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu a {
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #374151;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 15px;
+}
+
+.menu a:hover {
+  background-color: #eef2ff; /* Azul bem claro no hover */
+  color: #1e40af;
+}
+
+/* NOVO: Estilo para o link ativo no menu */
+.menu a.active {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.painel {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto; /* Permite rolagem se o conteúdo for grande */
+}
+
+.painel h1 {
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+/* Adaptações para as outras páginas */
+.lista-funcionarios .funcionario, .caminhao, .total-combustivel, .lista-voos a {
+  border: 1px solid #e5e7eb;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+}
+
+.lista-voos a {
+  display: block;
+  text-decoration: none;
+  color: #1e40af;
+  transition: background-color 0.2s;
+}
+.lista-voos a:hover {
+  background-color: #f3f4f6;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f3f4f6;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+}
+
+/* Estilos do Formulário de Login (sem alterações) */
+.main-container {
+  display: flex;
+  width: 900px;
+  height: 560px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+.left-panel {
+  flex: 1;
+  background-color: #2563eb;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+.left-panel h1 {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.right-panel {
+  flex: 1.2;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.form-box {
+  width: 100%;
+  max-width: 350px;
+}
+.form-box h2 {
+  color: #1f2937;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+label {
+  font-size: 14px;
+  font-weight: 500;
+}
+input {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+button {
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+button:hover {
+  background-color: #1e40af;
+}
+.link {
+  font-size: 13px;
+  text-align: center;
+  color: #6b7280;
+}
+.link a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+/* --- NOVO: Estilos para o Painel Administrativo --- */
+
+.layout {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  height: 95%;
+  max-height: 800px;
+  background-color: #ffffff;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Barra Lateral */
+.sidebar {
+  width: 250px;
+  background-color: #f8fafc;
+  padding: 24px;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.foto-perfil {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #e5e7eb;
+}
+
+#nomeUsuario {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 18px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu a {
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #374151;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  background-color: #eef2ff;
+  color: #1e40af;
+}
+
+.menu a.active {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+/* Painel de Conteúdo Principal */
+.painel {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  background-color: #f9fafb;
+}
+
+.painel h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 15px;
+}
+
+.painel p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Estilo de Cartão para Conteúdos */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card p {
+  margin-bottom: 5px;
+}
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Estilo para a Lista de Voos */
+.lista-voos a.voo-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lista-voos a.voo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+  color: #2563eb;
+}
+
+/* Destaque para totais e faturamento */
+.total-summary {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.total-summary span {
+  color: #2563eb;
+  padding: 4px 8px;
+  background-color: #eef2ff;
+  border-radius: 6px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Vendas - Sistema de Aeroporto</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="perfil">
+        <img src="imgs/perfil.png" alt="Foto de perfil" class="foto-perfil">
+        <p id="nomeUsuario">Administrador</p>
+      </div>
+      <nav class="menu">
+        <a href="adm.html">🏠 Início</a>
+        <a href="funcionarios.html">👥 Funcionários</a>
+        <a href="voos.html">✈️ Voos</a>
+        <a href="combustivel.html">⛽ Combustível</a>
+        <a href="vendas.html" class="active">💳 Vendas</a>
+      </nav>
+    </aside>
+
+    <main class="painel" id="areaVendas">
+      <h1>Gerenciamento de Vendas</h1>
+      <div class="card total-summary">
+        <p>Total de passagens vendidas hoje: <span id="vendasHoje">127</span></p>
+      </div>
+      <div class="card total-summary">
+        <p>Faturamento do dia: <span id="faturamentoHoje">R$ 38.100</span></p>
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>

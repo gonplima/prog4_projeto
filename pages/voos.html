@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Voos - Sistema de Aeroporto</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    
+    <aside class="sidebar">
+      <div class="perfil">
+        <img src="imgs/perfil.png" alt="Foto de perfil" class="foto-perfil">
+        <p id="nomeUsuario">Administrador</p>
+      </div>
+      <nav class="menu">
+        <a href="adm.html">🏠 Início</a>
+        <a href="funcionarios.html">👥 Funcionários</a>
+        <a href="voos.html" class="active">✈️ Voos</a>
+        <a href="combustivel.html">⛽ Combustível</a>
+        <a href="vendas.html">💳 Vendas</a>
+      </nav>
+    </aside>
+
+    <main class="painel" id="areaVoos">
+      <h1>Voos Programados</h1>
+      <div class="lista-voos" id="listaVoos">
+        <a href="voo.html?id=1023" class="voo-card card">✈️ Voo 1023 - Recife → Salvador - 12:00</a>
+        <a href="voo.html?id=2045" class="voo-card card">✈️ Voo 2045 - Recife → São Paulo - 15:45</a>
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>

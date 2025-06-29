@@ -1,0 +1,208 @@
+### Teste de conexão
+GET http://localhost:3000/test-db
+
+### --- CRUD AERONAVES ---
+
+### Listar todas as aeronaves
+GET http://localhost:3000/aeronaves
+
+### Obter aeronave por ID
+GET http://localhost:3000/aeronaves/1
+
+### Criar nova aeronave
+POST http://localhost:3000/aeronaves
+Content-Type: application/json
+
+{
+  "nome": "Boeing 737"
+}
+
+### Atualizar aeronave
+PUT http://localhost:3000/aeronaves/5
+Content-Type: application/json
+
+{
+  "nome": "Boeing 737 MAX"
+}
+
+### Deletar aeronave
+DELETE http://localhost:3000/aeronaves/5
+
+### --- CRUD COMBUSTIVEL ---
+
+### Listar todos os combustíveis
+GET http://localhost:3000/combustivel
+
+### Obter combustível por ID
+GET http://localhost:3000/combustivel/1
+
+### Criar novo combustível
+POST http://localhost:3000/combustivel
+Content-Type: application/json
+
+{
+  "caminhao": "Caminhão 1",
+  "quantidade": 1000,
+  "data_atualizacao": "2024-06-29"
+}
+
+### Atualizar combustível
+PUT http://localhost:3000/combustivel/1
+Content-Type: application/json
+
+{
+  "caminhao": "Caminhão 2",
+  "quantidade": 1200,
+  "data_atualizacao": "2024-06-30"
+}
+
+### Deletar combustível
+DELETE http://localhost:3000/combustivel/1
+
+### --- CRUD FUNCIONARIOS ---
+
+### Listar todos os funcionários
+GET http://localhost:3000/funcionarios
+
+### Obter funcionário por ID
+GET http://localhost:3000/funcionarios/1
+
+### Criar novo funcionário
+POST http://localhost:3000/funcionarios
+Content-Type: application/json
+
+{
+  "nome": "João da Silva",
+  "ocupacao": "Piloto",
+  "usuario_id": 1,
+  "ativo": true
+}
+
+### Atualizar funcionário
+PUT http://localhost:3000/funcionarios/1
+Content-Type: application/json
+
+{
+  "nome": "João da Silva",
+  "ocupacao": "Instrutor",
+  "usuario_id": 1,
+  "ativo": false
+}
+
+### Deletar funcionário
+DELETE http://localhost:3000/funcionarios/1
+
+### --- CRUD USUARIOS ---
+
+### Listar todos os usuários
+GET http://localhost:3000/usuarios
+
+### Obter usuário por ID
+GET http://localhost:3000/usuarios/1
+
+### Criar novo usuário
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Maria Souza",
+  "cpf": "12345678900",
+  "email": "maria@email.com",
+  "celular": "11999999999",
+  "senha": "senha123",
+  "permissao": 2,
+  "criado_em": "2024-06-29"
+}
+
+### Atualizar usuário
+PUT http://localhost:3000/usuarios/1
+Content-Type: application/json
+
+{
+  "nome": "Maria Souza",
+  "cpf": "12345678900",
+  "email": "maria.nova@email.com",
+  "celular": "11988888888",
+  "senha": "novaSenha123",
+  "permissao": 2,
+  "criado_em": "2024-06-30"
+}
+
+### Deletar usuário
+DELETE http://localhost:3000/usuarios/1
+
+### --- CRUD VENDAS ---
+
+### Listar todas as vendas
+GET http://localhost:3000/vendas
+
+### Obter venda por ID
+GET http://localhost:3000/vendas/1
+
+### Criar nova venda
+POST http://localhost:3000/vendas
+Content-Type: application/json
+
+{
+  "voo_id": 1,
+  "quantidade": 2,
+  "valor_total": 1000,
+  "data_vendas": "2024-06-01"
+}
+
+### Atualizar venda
+PUT http://localhost:3000/vendas/1
+Content-Type: application/json
+
+{
+  "voo_id": 1,
+  "quantidade": 3,
+  "valor_total": 1500,
+  "data_vendas": "2024-06-02"
+}
+
+### Deletar venda
+DELETE http://localhost:3000/vendas/1
+
+### --- CRUD VOOS ---
+
+### Listar todos os voos
+GET http://localhost:3000/voos
+
+### Obter voo por ID
+GET http://localhost:3000/voos/1
+
+### Criar novo voo
+POST http://localhost:3000/voos
+Content-Type: application/json
+
+{
+  "numero": "AZ1234",
+  "origem": "GRU",
+  "destino": "GIG",
+  "data": "2024-06-10",
+  "hora": "14:00",
+  "aeronave": 1,
+  "portao": "A1",
+  "piloto": "João da Silva",
+  "status": "previsto"
+}
+
+### Atualizar voo
+PUT http://localhost:3000/voos/1
+Content-Type: application/json
+
+{
+  "numero": "AZ1234",
+  "origem": "GRU",
+  "destino": "GIG",
+  "data": "2024-06-11",
+  "hora": "15:00",
+  "aeronave": 1,
+  "portao": "A2",
+  "piloto": "João da Silva",
+  "status": "atrasado"
+}
+
+### Deletar voo
+DELETE http://localhost:3000/voos/1

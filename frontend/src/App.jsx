@@ -105,30 +105,24 @@ export default function App() {
           path="/funcionario"
           element={
             <FuncionarioRoute>
-              <FuncionarioLayout>
-                <FuncionarioHome />
-              </FuncionarioLayout>
+              <FuncionarioHome />
             </FuncionarioRoute>
           }
         />
         <Route
           path="/voos"
           element={
-            <FuncionarioRoute>
-              <FuncionarioLayout>
-                <Voos />
-              </FuncionarioLayout>
-            </FuncionarioRoute>
+            <PrivateRoute>
+              <Voos />
+            </PrivateRoute>
           }
         />
         <Route
           path="/aeronaves"
           element={
-            <FuncionarioRoute>
-              <FuncionarioLayout>
-                <Aeronaves />
-              </FuncionarioLayout>
-            </FuncionarioRoute>
+            <PrivateRoute>
+              <Aeronaves />
+            </PrivateRoute>
           }
         />
         <Route path="*" element={<Navigate to="/login" />} />

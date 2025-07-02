@@ -25,11 +25,11 @@ router.get("/:id", async (req, res) => {
 
 // Criar aeronave
 router.post("/", async (req, res) => {
-  const { nome } = req.body;
+  const { nome, combustivel_disponivel } = req.body;
   try {
     const result = await pool.query(
-      "INSERT INTO aeronaves (nome) VALUES ($1) RETURNING *",
-      [nome]
+      "INSERT INTO aeronaves (nome, combustivel_disponivel) VALUES ($1, $2) RETURNING *",
+      [nome, combustivel_disponivel]
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
@@ -39,11 +39,11 @@ router.post("/", async (req, res) => {
 
 // Atualizar aeronave
 router.put("/:id", async (req, res) => {
-  const { nome } = req.body;
+  const { nome, combustivel_disponivel } = req.body;
   try {
     const result = await pool.query(
-      "UPDATE aeronaves SET nome=$1 WHERE id=$2 RETURNING *",
-      [nome, req.params.id]
+      "UPDATE aeronaves SET nome=$1, combustivel_disponivel=$2 WHERE id=$3 RETURNING *",
+      [nome, combustivel_disponivel, req.params.id]
     );
     if (result.rows.length === 0) return res.status(404).json({ error: "Aeronave não encontrada" });
     res.json(result.rows[0]);

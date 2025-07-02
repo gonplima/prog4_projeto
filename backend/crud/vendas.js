@@ -25,11 +25,11 @@ router.get("/:id", async (req, res) => {
 
 // Criar venda
 router.post("/", async (req, res) => {
-  const { voo_id, quantidade, valor_total, data_vendas } = req.body;
+  const { voos_id, funcionario_id, quantidade } = req.body;
   try {
     const result = await pool.query(
-      "INSERT INTO vendas (voo_id, quantidade, valor_total, data_vendas) VALUES ($1, $2, $3, $4) RETURNING *",
-      [voo_id, quantidade, valor_total, data_vendas]
+      "INSERT INTO vendas (voos_id, funcionario_id, quantidade) VALUES ($1, $2, $3) RETURNING *",
+      [voos_id, funcionario_id, quantidade]
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
@@ -39,11 +39,11 @@ router.post("/", async (req, res) => {
 
 // Atualizar venda
 router.put("/:id", async (req, res) => {
-  const { voo_id, quantidade, valor_total, data_vendas } = req.body;
+  const { voos_id, funcionario_id, quantidade } = req.body;
   try {
     const result = await pool.query(
-      "UPDATE vendas SET voo_id=$1, quantidade=$2, valor_total=$3, data_vendas=$4 WHERE id=$5 RETURNING *",
-      [voo_id, quantidade, valor_total, data_vendas, req.params.id]
+      "UPDATE vendas SET voos_id=$1, funcionario_id=$2, quantidade=$3 WHERE id=$4 RETURNING *",
+      [voos_id, funcionario_id, quantidade, req.params.id]
     );
     if (result.rows.length === 0) return res.status(404).json({ error: "Venda não encontrada" });
     res.json(result.rows[0]);

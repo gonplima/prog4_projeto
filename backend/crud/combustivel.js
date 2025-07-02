@@ -2,62 +2,27 @@ import express from "express";
 import pool from "../bd/index.js";
 const router = express.Router();
 
-// Listar todos os combustíveis
-router.get("/", async (req, res) => {
+// Obter o estoque total de combustível (id=1)
+router.get("/total", async (req, res) => {
   try {
-    const result = await pool.query("SELECT * FROM combustivel");
-    res.json(result.rows);
+    const result = await pool.query("SELECT quantidade FROM combustivel WHERE id = 1");
+    if (result.rows.length === 0) return res.status(404).json({ error: "Estoque de combustível não encontrado" });
+    res.json({ quantidade: result.rows[0].quantidade });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-// Obter combustível por ID
-router.get("/:id", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM combustivel WHERE id = $1", [req.params.id]);
-    if (result.rows.length === 0) return res.status(404).json({ error: "Combustível não encontrado" });
-    res.json(result.rows[0]);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// Criar novo combustível
-router.post("/", async (req, res) => {
-  const { caminhao, quantidade, data_atualizacao } = req.body;
+// Atualizar o estoque total (adicionar/remover)
+router.put("/total", async (req, res) => {
+  const { quantidade } = req.body; // quantidade pode ser positiva ou negativa
   try {
     const result = await pool.query(
-      "INSERT INTO combustivel (caminhao, quantidade, data_atualizacao) VALUES ($1, $2, $3) RETURNING *",
-      [caminhao, quantidade, data_atualizacao]
+      "UPDATE combustivel SET quantidade = quantidade + $1, data_atualizacao = NOW() WHERE id = 1 RETURNING *",
+      [quantidade]
     );
-    res.status(201).json(result.rows[0]);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// Atualizar combustível
-router.put("/:id", async (req, res) => {
-  const { caminhao, quantidade, data_atualizacao } = req.body;
-  try {
-    const result = await pool.query(
-      "UPDATE combustivel SET caminhao=$1, quantidade=$2, data_atualizacao=$3 WHERE id=$4 RETURNING *",
-      [caminhao, quantidade, data_atualizacao, req.params.id]
-    );
-    if (result.rows.length === 0) return res.status(404).json({ error: "Combustível não encontrado" });
+    if (result.rows.length === 0) return res.status(404).json({ error: "Estoque de combustível não encontrado" });
     res.json(result.rows[0]);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// Deletar combustível
-router.delete("/:id", async (req, res) => {
-  try {
-    const result = await pool.query("DELETE FROM combustivel WHERE id=$1 RETURNING *", [req.params.id]);
-    if (result.rows.length === 0) return res.status(404).json({ error: "Combustível não encontrado" });
-    res.json({ message: "Combustível removido" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

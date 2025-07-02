@@ -25,11 +25,11 @@ router.get("/:id", async (req, res) => {
 
 // Criar voo
 router.post("/", async (req, res) => {
-  const { numero, origem, destino, data, hora, aeronave, portao, piloto, status } = req.body;
+  const { origem, destino, piloto, plataforma, aeronave_id } = req.body;
   try {
     const result = await pool.query(
-      "INSERT INTO voos (numero, origem, destino, data, hora, aeronave, portao, piloto, status) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
-      [numero, origem, destino, data, hora, aeronave, portao, piloto, status]
+      "INSERT INTO voos (origem, destino, piloto, plataforma, aeronave_id) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      [origem, destino, piloto, plataforma, aeronave_id]
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
@@ -39,11 +39,11 @@ router.post("/", async (req, res) => {
 
 // Atualizar voo
 router.put("/:id", async (req, res) => {
-  const { numero, origem, destino, data, hora, aeronave, portao, piloto, status } = req.body;
+  const { origem, destino, piloto, plataforma, aeronave_id } = req.body;
   try {
     const result = await pool.query(
-      "UPDATE voos SET numero=$1, origem=$2, destino=$3, data=$4, hora=$5, aeronave=$6, portao=$7, piloto=$8, status=$9 WHERE id=$10 RETURNING *",
-      [numero, origem, destino, data, hora, aeronave, portao, piloto, status, req.params.id]
+      "UPDATE voos SET origem=$1, destino=$2, piloto=$3, plataforma=$4, aeronave_id=$5 WHERE id=$6 RETURNING *",
+      [origem, destino, piloto, plataforma, aeronave_id, req.params.id]
     );
     if (result.rows.length === 0) return res.status(404).json({ error: "Voo não encontrado" });
     res.json(result.rows[0]);

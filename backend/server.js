@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import dotenv from "dotenv";
 import pool from "./bd/index.js";
@@ -5,13 +6,15 @@ import pool from "./bd/index.js";
 import aeronavesRouter from "./crud/aeronaves.js";
 import combustivelRouter from "./crud/combustivel.js";
 import funcionariosRouter from "./crud/funcionarios.js";
-import usuariosRouter from "./crud/usuarios.js";
+import passageirosRouter from "./crud/passageiros.js";
 import vendasRouter from "./crud/vendas.js";
 import voosRouter from "./crud/voos.js";
+import administradoresRouter from "./crud/administradores.js";
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 // Teste de conexão
@@ -29,9 +32,10 @@ app.get("/test-db", async (req, res) => {
 app.use("/aeronaves", aeronavesRouter);
 app.use("/combustivel", combustivelRouter);
 app.use("/funcionarios", funcionariosRouter);
-app.use("/usuarios", usuariosRouter);
+app.use("/passageiros", passageirosRouter);
 app.use("/vendas", vendasRouter);
 app.use("/voos", voosRouter);
+app.use("/administradores", administradoresRouter);
 
 app.get("/", (req, res) => {
   res.send("API do Aviation Manager está rodando!");

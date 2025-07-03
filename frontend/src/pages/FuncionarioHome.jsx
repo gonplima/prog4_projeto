@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Sidebar from "../components/Sidebar";
+import SidebarFuncionario from "../components/SidebarFuncionario";
 import { useNavigate } from "react-router-dom";
 
 export default function FuncionarioHome() {
@@ -174,7 +174,7 @@ export default function FuncionarioHome() {
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-      <Sidebar />
+      <SidebarFuncionario />
       <main className="flex-1 p-10 flex flex-col items-center">
         <div className="w-full max-w-3xl">
           <h1 className="text-3xl font-bold mb-4 text-center text-blue-700">Painel do Funcionário</h1>
@@ -182,80 +182,7 @@ export default function FuncionarioHome() {
             Bem-vindo, {usuario.nome}! <br />
             Aqui você pode gerenciar passageiros dos voos, ver suas vendas e editar sua conta.
           </p>
-          <div className="flex flex-col md:flex-row gap-6 justify-center mb-12">
-            <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
-              <span className="text-4xl mb-2">✈️</span>
-              <span className="font-semibold text-lg mb-1">Voos</span>
-              <span className="text-gray-500 text-sm text-center">Gerencie passageiros dos voos.</span>
-            </div>
-            <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
-              <span className="text-4xl mb-2">💳</span>
-              <span className="font-semibold text-lg mb-1">Minhas Vendas</span>
-              <span className="text-gray-500 text-sm text-center">Veja o total de vendas realizadas.</span>
-            </div>
-            <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
-              <span className="text-4xl mb-2">⚙️</span>
-              <span className="font-semibold text-lg mb-1">Minha Conta</span>
-              <span className="text-gray-500 text-sm text-center">Edite ou apague sua conta.</span>
-            </div>
-          </div>
-
-          {/* Passageiros */}
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-4">Passageiros dos Voos</h2>
-            <form onSubmit={handleFormSubmit} className="bg-white rounded-lg shadow p-6 flex flex-col gap-3 max-w-xl mb-6">
-              <label>Nome</label>
-              <input name="nome" value={form.nome} onChange={handleFormChange} className="border rounded p-2" required />
-              <label>CPF</label>
-              <input name="cpf" value={form.cpf} onChange={handleFormChange} className="border rounded p-2" required />
-              <label>E-mail</label>
-              <input name="email" value={form.email} onChange={handleFormChange} className="border rounded p-2" required />
-              <label>Voo</label>
-              <select name="voo_id" value={form.voo_id} onChange={handleFormChange} className="border rounded p-2" required>
-                <option value="">Selecione o voo</option>
-                {voos.map((v) => (
-                  <option key={v.id} value={v.id}>
-                    {getVooInfo(v.id)}
-                  </option>
-                ))}
-              </select>
-              <button className="bg-blue-600 text-white rounded p-2 mt-2">{editId ? "Salvar Alterações" : "Adicionar Passageiro"}</button>
-              {msg && <p className={msg.includes("erro") ? "text-red-500" : "text-green-600"}>{msg}</p>}
-            </form>
-            <div className="space-y-3">
-              {passageiros
-                .filter((p) => voos.some((v) => String(v.id) === String(p.voo_id)))
-                .map((p) => (
-                  <div key={p.id} className="bg-gray-50 border rounded p-4 flex flex-col md:flex-row md:items-center md:justify-between">
-                    <div>
-                      <b>{p.nome}</b> | {p.email} | Voo: {getVooInfo(p.voo_id)}
-                    </div>
-                    <div className="flex gap-2 mt-2 md:mt-0">
-                      <button onClick={() => handleEdit(p)} className="px-3 py-1 bg-yellow-400 rounded">Editar</button>
-                      <button onClick={() => handleDelete(p.id)} className="px-3 py-1 bg-red-500 text-white rounded">Remover</button>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </section>
-
-          {/* Vendas */}
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-4">Minhas Vendas</h2>
-            <div className="bg-white rounded-lg shadow px-6 py-4 border font-semibold mb-4">
-              Total de passagens vendidas: <span className="text-blue-700">{totalVendas}</span>
-            </div>
-            <div className="space-y-2">
-              {minhasVendas.map((v) => (
-                <div key={v.id} className="bg-gray-50 border rounded p-3 flex flex-col md:flex-row md:items-center md:justify-between">
-                  <div>
-                    Voo: {getVooInfo(v.voos_id)} | Quantidade: {v.quantidade}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
+  
           {/* Conta */}
           <div className="flex justify-center">
             <button

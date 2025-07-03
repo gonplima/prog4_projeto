@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-// Sidebar única, menu dinâmico conforme tipo de usuário
+// Sidebar menu dinâmico conforme tipo de usuário
 export default function Sidebar() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -15,23 +15,8 @@ export default function Sidebar() {
       show: true,
     },
     {
-      to: "/funcionarios",
-      label: "Funcionários",
-      show: tipo === "admin",
-    },
-    {
-      to: "/aeronaves",
-      label: "Aeronaves",
-      show: true,
-    },
-    {
-      to: "/voos",
-      label: "Voos",
-      show: true,
-    },
-    {
-      to: "/combustivel",
-      label: "Combustível",
+      to: "/passageiros",
+      label: " Passageiros",
       show: true,
     }
   ];

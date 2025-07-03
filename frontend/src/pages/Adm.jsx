@@ -76,34 +76,10 @@ export default function Adm() {
         <div className="w-full max-w-3xl">
           <h1 className="text-3xl font-bold mb-4 text-center text-blue-700">Painel Inicial do Sistema</h1>
           <p className="text-lg text-center mb-10 text-gray-700">
-            Bem-vindo ao sistema de gerenciamento do aeroporto! <br />
-            Utilize o menu lateral para acessar as funcionalidades do sistema.<br />
-            <span className="block mt-4 text-base text-gray-500">
-              Aqui você pode gerenciar voos, funcionários, aeronaves, vendas e combustível de forma rápida e intuitiva.
-            </span>
+            Bem-vindo, {usuario.nome}! <br />
+            Aqui você pode gerenciar funcionarios, aeronaves, voos e combustiveis do aeroporto.
           </p>
-          <div className="flex flex-col md:flex-row gap-6 justify-center mb-12">
-            <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
-              <span className="text-4xl mb-2">✈️</span>
-              <span className="font-semibold text-lg mb-1">Voos</span>
-              <span className="text-gray-500 text-sm text-center">Gerencie, edite e acompanhe todos os voos programados.</span>
-            </div>
-            <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
-              <span className="text-4xl mb-2">👥</span>
-              <span className="font-semibold text-lg mb-1">Funcionários</span>
-              <span className="text-gray-500 text-sm text-center">Cadastre, edite e remova funcionários do sistema.</span>
-            </div>
-            <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
-              <span className="text-4xl mb-2">🛩️</span>
-              <span className="font-semibold text-lg mb-1">Aeronaves</span>
-              <span className="text-gray-500 text-sm text-center">Gerencie aeronaves e controle o combustível disponível.</span>
-            </div>
-            <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
-              <span className="text-4xl mb-2">⚙️</span>
-              <span className="font-semibold text-lg mb-1">Configurações</span>
-              <span className="text-gray-500 text-sm text-center">Altere ou apague sua conta de administrador.</span>
-            </div>
-          </div>
+          
           <div className="flex justify-center">
             <button
               className="px-6 py-3 bg-gray-800 text-white rounded-lg font-semibold hover:bg-gray-900 transition"

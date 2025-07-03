@@ -11,7 +11,7 @@ import Cadastro from "./pages/Cadastro";
 import Aeronaves from "./pages/Aeronaves";
 import FuncionarioHome from "./pages/FuncionarioHome"; // <-- adicionado
 import Passageiros from "./pages/Passageiros"
-
+ 
 // Componente para proteger rotas
 function PrivateRoute({ children }) {
   const usuario = localStorage.getItem("usuarioLogado");

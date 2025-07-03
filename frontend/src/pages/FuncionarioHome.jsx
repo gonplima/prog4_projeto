@@ -60,7 +60,7 @@ export default function FuncionarioHome() {
         .catch(() => setContaMsg("Erro ao carregar dados do funcionário."));
     }
   }, [showConfig, funcId]);
-
+ 
   function handleFormChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }

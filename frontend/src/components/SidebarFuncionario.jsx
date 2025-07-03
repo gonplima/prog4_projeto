@@ -25,7 +25,7 @@ export default function Sidebar() {
     localStorage.removeItem("usuarioLogado");
     navigate("/login");
   }
-
+ 
   return (
     <aside className="w-60 bg-gray-50 p-6 border-r flex flex-col">
       <div className="text-center mb-8">

@@ -68,7 +68,7 @@ export default function Adm() {
     localStorage.removeItem("usuarioLogado");
     window.location.href = "/login";
   }
-
+ 
   return (
     <div className="flex min-h-screen bg-gray-100">
       <Sidebar />

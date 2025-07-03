@@ -1,0 +1,208 @@
+### Teste de conexão
+GET http://localhost:3000/test-db
+
+### --- CRUD ADMINISTRADORES ---
+
+### Listar todos os administradores
+GET http://localhost:3000/administradores
+
+### Obter administrador por ID
+GET http://localhost:3000/administradores/1
+
+### Criar novo administrador
+POST http://localhost:3000/administradores
+Content-Type: application/json
+
+{
+  "nome": "Admin Teste",
+  "cpf": "11122233344",
+  "email": "admin@email.com",
+  "senha": "admin123"
+}
+
+### Atualizar administrador
+PUT http://localhost:3000/administradores/1
+Content-Type: application/json
+
+{
+  "nome": "Admin Teste Editado",
+  "cpf": "11122233344",
+  "email": "admineditado@email.com",
+  "senha": "admin456"
+}
+
+### Deletar administrador
+DELETE http://localhost:3000/administradores/1
+
+### --- CRUD FUNCIONARIOS ---
+
+### Listar todos os funcionários
+GET http://localhost:3000/funcionarios
+
+### Obter funcionário por ID
+GET http://localhost:3000/funcionarios/1
+
+### Criar novo funcionário
+POST http://localhost:3000/funcionarios
+Content-Type: application/json
+
+{
+  "nome": "João da Silva",
+  "cpf": "22233344455",
+  "email": "joao@email.com",
+  "funcao": "Piloto",
+  "senha": "senha123"
+}
+
+### Atualizar funcionário
+PUT http://localhost:3000/funcionarios/1
+Content-Type: application/json
+
+{
+  "nome": "João da Silva",
+  "cpf": "22233344455",
+  "email": "joaoeditado@email.com",
+  "funcao": "Instrutor",
+  "senha": "novaSenha123"
+}
+
+### Deletar funcionário
+DELETE http://localhost:3000/funcionarios/1
+
+### --- CRUD AERONAVES ---
+
+### Listar todas as aeronaves
+GET http://localhost:3000/aeronaves
+
+### Obter aeronave por ID
+GET http://localhost:3000/aeronaves/1
+
+### Criar nova aeronave
+POST http://localhost:3000/aeronaves
+Content-Type: application/json
+
+{
+  "nome": "Boeing 737",
+  "combustivel_disponivel": 5000
+}
+
+### Atualizar aeronave
+PUT http://localhost:3000/aeronaves/1
+Content-Type: application/json
+
+{
+  "nome": "Boeing 737 MAX",
+  "combustivel_disponivel": 7000
+}
+
+### Deletar aeronave
+DELETE http://localhost:3000/aeronaves/1
+
+### --- CRUD VOOS ---
+
+### Listar todos os voos
+GET http://localhost:3000/voos
+
+### Obter voo por ID
+GET http://localhost:3000/voos/1
+
+### Criar novo voo
+POST http://localhost:3000/voos
+Content-Type: application/json
+
+{
+  "origem": "GRU",
+  "destino": "GIG",
+  "piloto": "João da Silva",
+  "plataforma": "A1",
+  "aeronave_id": 1
+}
+
+### Atualizar voo
+PUT http://localhost:3000/voos/1
+Content-Type: application/json
+
+{
+  "origem": "GRU",
+  "destino": "GIG",
+  "piloto": "João da Silva",
+  "plataforma": "A2",
+  "aeronave_id": 1
+}
+
+### Deletar voo
+DELETE http://localhost:3000/voos/1
+
+### --- CRUD PASSAGEIROS ---
+
+### Listar todos os passageiros
+GET http://localhost:3000/passageiros
+
+### Obter passageiro por ID
+GET http://localhost:3000/passageiros/1
+
+### Criar novo passageiro
+POST http://localhost:3000/passageiros
+Content-Type: application/json
+
+{
+  "nome": "Maria Souza",
+  "cpf": "12345678900",
+  "email": "maria@email.com",
+  "voo_id": 1,
+  "funcionario_id": 1
+}
+
+### Atualizar passageiro
+PUT http://localhost:3000/passageiros/1
+Content-Type: application/json
+
+{
+  "nome": "Maria Souza",
+  "cpf": "12345678900",
+  "email": "maria.nova@email.com",
+  "voo_id": 1,
+  "funcionario_id": 1
+}
+
+### Deletar passageiro
+DELETE http://localhost:3000/passageiros/1
+
+### --- CRUD VENDAS ---
+
+### Listar todas as vendas
+GET http://localhost:3000/vendas
+
+### Obter venda por ID
+GET http://localhost:3000/vendas/1
+
+### Criar nova venda
+POST http://localhost:3000/vendas
+Content-Type: application/json
+
+{
+  "voos_id": 1,
+  "funcionario_id": 1,
+  "quantidade": 2
+}
+
+### Atualizar venda
+PUT http://localhost:3000/vendas/1
+Content-Type: application/json
+
+{
+  "voos_id": 1,
+  "funcionario_id": 1,
+  "quantidade": 3
+}
+
+### Deletar venda
+DELETE http://localhost:3000/vendas/1
+  "aeronave": 1,
+  "portao": "A2",
+  "piloto": "João da Silva",
+  "status": "atrasado"
+}
+
+### Deletar voo
+DELETE http://localhost:3000/voos/1
